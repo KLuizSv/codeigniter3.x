@@ -373,11 +373,13 @@ class MY_Controller extends CI_Controller {
 	{
 		$array = array();
 
-		$items = array('fa-rub', 'fa-pagelines', 'fa-stack-exchange', 'fa-arrow-circle-o-right', 'fa-arrow-circle-o-left', 'fa-caret-square-o-left', 'fa-dot-circle-o', 'fa-wheelchair', 'fa-vimeo-square', 'fa-try', 'fa-plus-square-o', 'fa-adjust', 'fa-anchor', 'fa-archive', 'fa-arrows', 'fa-arrows-h', 'fa-arrows-v', 'fa-asterisk', 'fa-ban', 'fa-bar-chart-o', 'fa-barcode', 'fa-bars', 'fa-beer', 'fa-bell', 'fa-bell-o', 'fa-bolt', 'fa-book', 'fa-bookmark', 'fa-bookmark-o', 'fa-briefcase');
+		$items = array('rub', 'pagelines', 'stack-exchange', 'arrow-circle-o-right', 'arrow-circle-o-left', 'caret-square-o-left', 'dot-circle-o', 'wheelchair', 'vimeo-square', 'try', 'plus-square-o', 'adjust', 'anchor', 'archive', 'arrows', 'arrows-h', 'arrows-v', 'asterisk', 'ban', 'bar-chart-o', 'barcode', 'bars', 'beer', 'bell', 'bell-o', 'bolt', 'book', 'bookmark', 'bookmark-o', 'briefcase', 'bug', 'building-o', 'bullhorn', 'bullseye', 'calendar', 'calendar-o', 'camera', 'camera-retro', 'caret-square-o-down', 'caret-square-o-left', 'caret-square-o-right', 'caret-square-o-up', 'certificate', 'check', 'check-circle', 'check-circle-o', 'check-square', 'check-square-o', 'circle', 'circle-o', 'clock-o', 'cloud', 'cloud-download', 'cloud-upload', 'code', 'code-fork', 'coffee', 'cog', 'cogs', 'comment', 'comment-o', 'comments', 'comment-o', 'compass', 'credit-card', 'crop', 'crosshairs', 'cutlery', 'dashboard', 'desktop', 'dot-circle-o', 'download', 'edit', 'ellipsis-h', 'ellipsis-v', 'envelope', 'envelope-o', 'eraser', 'exchange', 'exclamation', 'exclamation-circle', 'exclamation-triangle', 'external-link', 'external-link-square', 'eye', 'eye-slash', 'female', 'fighter-jet', 'film', 'filter', 'fire', 'fire-extinguisher', 'flag', 'flag-checkered', 'flag-o', 'flash', 'flask', 'folder', 'folder-o', 'folder-open', 'folder-open-o', 'frown-o', 'gamepad', 'gavel', 'gear', 'gears', 'gift', 'glass', 'globe', 'group', 'hdd-o', 'headphones', 'heart', 'heart-o', 'home', 'inbox', 'info', 'info-circle', 'key', 'keyboard-o', 'laptop', 'leaf', 'legal', 'lemon-o', 'level-down', 'level-up', 'ligthbulb-o', 'location-arrow', 'lock', 'magic', 'magnet', 'male', 'map-marker', 'meh-o', 'microphone', 'microphone-slash', 'minus', 'minus-circle', 'minus-square', 'minus-square-o', 'mobile', 'money', 'moon-o', 'music', 'pencil', 'pencil-square', 'pencil-square-o', 'phone', 'phone-square', 'picture-o', 'plane', 'plus', 'plus-circle', 'plus-square', 'plus-square-o', 'power-off', 'print', 'puzzle-piece', 'qrcode', 'question', 'question-circle', 'quote-left', 'quote-right', 'random', 'refresh', 'reply', 'reply-all', 'retweet', 'road', 'rocket', 'rss', 'rss-square', 'search', 'search-minus', 'search-plus', 'share', 'share-square', 'share-square-o', 'shield', 'shopping-cart', 'sign-in', 'sign-out', 'signal', 'sitemap', 'smile-o', 'sort', 'spinner', 'square', 'square-o', 'star', 'star-half', 'star-half-o', 'star-o', 'suitcase', 'sun-o', 'tablet', 'tachometer', 'tag', 'tags', 'tags', 'terminal', 'thumb-tack', 'thumbs-down', 'thumbs-o-down', 'thumbs-up', 'thumbs-o-up', 'ticket', 'times', 'tint', 'trash-o', 'trophy', 'truck', 'umbrella', 'unlock', 'unlock-alt', 'upload', 'user', 'users', 'video-camera', 'warning', 'wrench');
 
 		foreach($items as $key => $value)
 		{
-			$array[trim($value)] = '<span class="fa '.trim($value).' tooltips" title="'.trim($value).'"></span>';
+			$value = 'fa-' . trim($value);
+
+			$array[$value] = '<span><i class="fa ' . $value . '"></i> fa ' . $value . '</span>';
 		}		
 
 		return $array;
@@ -646,7 +648,7 @@ class MY_Controller extends CI_Controller {
 	protected function identificarse($correo_electronico = NULL)
 	{
 		$data = [];
-		
+
 		if($correo_electronico != NULL)
 		{
 			$this->db->where("estado", 1);
