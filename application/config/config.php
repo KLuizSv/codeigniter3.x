@@ -23,7 +23,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url']	= 'http://localhost/codeigniter/CodeIgniter/';
+
+/*
+|--------------------------------------------------------------------------
+| Base View URL
+|--------------------------------------------------------------------------
+|
+| Default
+| http://example.com/application/view/templates/
+|
+| If this is not set then CodeIgniter will guess the protocol, domain and
+| path to your installation.
+|
+*/
+
+$config['base_view'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Administrator Site URL
+|--------------------------------------------------------------------------
+|
+| URL to your Administrator CodeIgniter root. Typically this will be your 
+| administrator base URL,
+| WITH a trailing slash:
+|
+|	http://example.com/administrator
+|
+| If this is not set then CodeIgniter will guess the protocol, domain and
+| path to your installation.
+|
+*/
+
+$config['backend_url'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Administrator View URL
+|--------------------------------------------------------------------------
+|
+|
+|	http://example.com/application/view/administrator/templates/
+|
+| If this is not set then CodeIgniter will guess the protocol, domain and
+| path to your installation.
+|
+*/
+
+$config['backend_view'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +83,18 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+
+/*
+|--------------------------------------------------------------------------
+| Index File
+|--------------------------------------------------------------------------
+|
+| Typically this will be your index.php file, unless you've renamed it to
+| something else. If you are using mod_rewrite to remove the page set this
+| variable so that it is blank.
+|
+*/
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +137,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'espanol';
 
 /*
 |--------------------------------------------------------------------------

@@ -90,6 +90,94 @@ if ( ! function_exists('base_url'))
 
 // ------------------------------------------------------------------------
 
+/**
+ * Base URL
+ * 
+ * Create a local URL based on your basepath.
+ * Segments can be passed in as a string or an array, same as site_url
+ * or a URL to a file can be passed in, e.g. to an image file.
+ *
+ * @access	public
+ * @param string
+ * @return	string
+ */
+if ( ! function_exists('base_url'))
+{
+	function base_url($uri = '')
+	{
+		$CI =& get_instance();
+		return $CI->config->base_url($uri);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Base View
+ * 
+ * Create a local URL based on your basepath.
+ * Segments can be passed in as a string or an array, same as site_url
+ * or a URL to a file can be passed in, e.g. to an image file.
+ *
+ * @access	public
+ * @param string
+ * @return	string
+ */
+if ( ! function_exists('base_view'))
+{
+	function base_view($uri = '')
+	{
+		$CI =& get_instance();
+		return $CI->config->base_view($uri);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Backend URL
+ * 
+ * Create a local URL based on your basepath.
+ * Segments can be passed in as a string or an array, same as site_url
+ * or a URL to a file can be passed in, e.g. to an image file.
+ *
+ * @access	public
+ * @param string
+ * @return	string
+ */
+if ( ! function_exists('backend_url'))
+{
+	function backend_url($uri = '')
+	{
+		$CI =& get_instance();
+		return $CI->config->backend_url($uri);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Backend View
+ * 
+ * Create a local URL based on your basepath.
+ * Segments can be passed in as a string or an array, same as site_url
+ * or a URL to a file can be passed in, e.g. to an image file.
+ *
+ * @access	public
+ * @param string
+ * @return	string
+ */
+if ( ! function_exists('backend_view'))
+{
+	function backend_view($uri = '')
+	{
+		$CI =& get_instance();
+		return $CI->config->backend_view($uri);
+	}
+}
+
+// ------------------------------------------------------------------------
+
 if ( ! function_exists('current_url'))
 {
 	/**

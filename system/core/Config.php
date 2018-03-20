@@ -110,6 +110,66 @@ class CI_Config {
 			$this->set_item('base_url', $base_url);
 		}
 
+		// Set the base_url automatically if none was provided
+		if (empty($this->config['base_view']))
+		{
+			if (isset($_SERVER['HTTP_HOST']))
+			{
+				$base_view = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
+				$base_view .= '://'. $_SERVER['HTTP_HOST'];
+				$base_view .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+			}
+
+			else
+			{
+				$base_view = 'http://localhost/';
+			}
+
+			$base_view .= 'assets/frontend/';
+
+			$this->set_item('base_view', $base_view);
+		}
+
+		// Set the base_url automatically if none was provided
+		if (empty($this->config['backend_url']))
+		{
+			if (isset($_SERVER['HTTP_HOST']))
+			{
+				$administrator_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
+				$administrator_url .= '://'. $_SERVER['HTTP_HOST'];
+				$administrator_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+			}
+
+			else
+			{
+				$administrator_url = 'http://localhost/';
+			}
+
+			$administrator_url .= 'backend/';
+
+			$this->set_item('backend_url', $administrator_url);
+		}
+
+		// Set the base_url automatically if none was provided
+		if (empty($this->config['backend_view']))
+		{
+			if (isset($_SERVER['HTTP_HOST']))
+			{
+				$administrator_view = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
+				$administrator_view .= '://'. $_SERVER['HTTP_HOST'];
+				$administrator_view .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+			}
+
+			else
+			{
+				$administrator_view = 'http://localhost/';
+			}
+
+			$administrator_view .= 'assets/backend/';
+
+			$this->set_item('backend_view', $administrator_view);
+		}
+
 		log_message('info', 'Config Class Initialized');
 	}
 
@@ -320,6 +380,48 @@ class CI_Config {
 		}
 
 		return $base_url.$this->_uri_string($uri);
+	}
+
+	// -------------------------------------------------------------
+
+	/**
+	 * Base VIEW
+	 * Returns base_view
+	 *
+	 * @access public
+	 * @return string
+	 */
+	function base_view()
+	{
+		return $this->slash_item('base_view');
+	}
+
+	// -------------------------------------------------------------
+
+	/**
+	 * Administrator URL
+	 * Returns administrator_url
+	 *
+	 * @access public
+	 * @return string
+	 */
+	function backend_url()
+	{
+		return $this->slash_item('backend_url');
+	}
+
+	// --------------------------------------------------------------
+
+	/**
+	 * Administrator VIEW
+	 * Returns administrator_view
+	 *
+	 * @access public
+	 * @return string
+	 */
+	function backend_view()
+	{
+		return $this->slash_item('backend_view');
 	}
 
 	// -------------------------------------------------------------
