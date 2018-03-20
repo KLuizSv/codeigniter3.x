@@ -19,7 +19,7 @@ class dashboard extends MY_Controller {
 
 	function index($retorno = FALSE, $data = array())
 	{
-		if(!isset($_SESSION[$this->session_name]['correo_electronico']))
+		if($this->mostrar_session('correo_electronico') == '')
 		{
 			/*
 			if(isset($_COOKIE[$this->session_name]))
@@ -38,14 +38,7 @@ class dashboard extends MY_Controller {
 			else
 			{
 			*/
-				if($this->input->post() === FALSE)
-				{
-					$this->load->view("backend/index_view");
-				}
-				else
-				{
-					$this->identificarse($this->input->post("correo_electronico"));
-				}
+				$this->identificarse($this->input->post("correo_electronico"));
 			/*
 			}
 			*/

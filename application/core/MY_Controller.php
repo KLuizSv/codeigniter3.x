@@ -645,45 +645,50 @@ class MY_Controller extends CI_Controller {
 
 	protected function identificarse($correo_electronico = NULL)
 	{
-		$this->db->where("estado", 1);
-		$this->db->where("activado", 1);
-		$this->db->where("correo_electronico", $correo_electronico);
-		$query = $this->db->get("administrador");
-		$busqueda = $query->row_array();
-
-		$data = array("correo_electronico" => $correo_electronico); // response
-
-		if(count($busqueda) > 0) // identity
+		$data = [];
+		
+		if($correo_electronico != NULL)
 		{
-			if($busqueda["contrasenia"] === $this->encrypt->hash($this->input->post("contrasenia")))
+			$this->db->where("estado", 1);
+			$this->db->where("activado", 1);
+			$this->db->where("correo_electronico", $correo_electronico);
+			$query = $this->db->get("administrador");
+			$busqueda = $query->row_array();
+
+			$data = array("correo_electronico" => $correo_electronico); // response
+
+			if(count($busqueda) > 0) // identity
 			{
-				// Guardando la variable en una COOKIE para poder bloquear la aplicación.
-
-				$this->module_model->actualizar('administrador', array('userlist' => 1), $busqueda['id']);
-				$this->cargar_cookie('correo_electronico', $busqueda['correo_electronico']);
-				$this->cargar_cookie('usuario', $busqueda['nombres'].' '.$busqueda['apellidos']);
-				$this->cargar_cookie('imagen', $busqueda['imagen']);
-
-				foreach($busqueda as $key => $value)
+				if($busqueda["contrasenia"] === $this->encrypt->hash($this->input->post("contrasenia")))
 				{
-					if($key <> 'contrasenia')
-					{
-						$this->cargar_session($key, $value);
-					}
-				}
+					// Guardando la variable en una COOKIE para poder bloquear la aplicación.
 
-				redirect(backend_url(), "refresh");
+					$this->module_model->actualizar('administrador', array('userlist' => 1), $busqueda['id']);
+					$this->cargar_cookie('correo_electronico', $busqueda['correo_electronico']);
+					$this->cargar_cookie('usuario', $busqueda['nombres'].' '.$busqueda['apellidos']);
+					$this->cargar_cookie('imagen', $busqueda['imagen']);
+
+					foreach($busqueda as $key => $value)
+					{
+						if($key <> 'contrasenia')
+						{
+							$this->cargar_session($key, $value);
+						}
+					}
+
+					redirect(backend_url(), "refresh");
+				}
+				else
+				{
+					$data['message'] = "Contraseña no coincide.";
+				}
 			}
 			else
 			{
-				$data['message'] = "Contraseña no coincide.";
+				// Eliminar las cookies..
+				delete_cookie($this->session_name);
+				$data['message'] = "El usuario no existe.";
 			}
-		}
-		else
-		{
-			// Eliminar las cookies..
-			delete_cookie($this->session_name);
-			$data['message'] = "El usuario no existe.";
 		}
 
 		$this->load->view("backend/index_view", $data);
