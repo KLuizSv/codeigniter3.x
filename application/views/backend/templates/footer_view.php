@@ -8,7 +8,7 @@
 </section>
 
 <script type="text/javascript">
-    var current_url = "<?php echo current_url(); ?>/"; var base_url = "<?php echo base_url(); ?>"; var backend_url = "<?php echo backend_url(); ?>"; var backend_view = "<?php echo backend_view(); ?>"; var base_view = "<?php echo base_view(); ?>"; var xnToken = "<?php echo MY_Controller::mostrar_session('token'); ?>"; var xnUserId = "<?php echo MY_Controller::mostrar_session('id'); ?>"; var xnUserName = "<?php echo MY_Controller::mostrar_session('nombres') . " " . MY_Controller::mostrar_session('apellidos'); ?>"; var xnChannel = "<?php echo $this->encrypt->sha1('iep'); ?>";
+    var current_url = "<?php echo current_url(); ?>/"; var base_url = "<?php echo base_url(); ?>"; var backend_url = "<?php echo backend_url(); ?>"; var backend_view = "<?php echo backend_view(); ?>"; var base_view = "<?php echo base_view(); ?>"; var xnToken = "<?php echo MY_Controller::mostrar_session('token'); ?>"; var xnUserId = "<?php echo MY_Controller::mostrar_session('id'); ?>"; var xnUserName = "<?php echo MY_Controller::mostrar_session('nombres') . " " . MY_Controller::mostrar_session('apellidos'); ?>"; var xnChannel = "<?php echo $this->encrypt->hash('iep'); ?>";
 </script>
 <script src="<?php echo backend_view(); ?>js/jquery-1.7.2.min.js"></script>
 <script src="<?php echo backend_view(); ?>assets/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>

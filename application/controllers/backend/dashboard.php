@@ -145,7 +145,7 @@ class dashboard extends MY_Controller {
 
 		$this->initialize($config);
 
-		if($this->input->post() === FALSE)
+		if(!isset($_POST) OR count($_POST) == 0)
 		{
 			$this->actualizar($this->mostrar_session('id'));
 		}
@@ -186,7 +186,6 @@ class dashboard extends MY_Controller {
 		$this->validar_usuario(); // Verificando la sesión del usuario..
 
 		$items['titulo'] = array('type' => 'text', 'text' => array('espanol' => 'Título', 'english' => 'Title'), 'placeholder' => 'Ingrese el título de la empresa', 'validate' => 'required');
-		$items['logo'] = array('type' => 'photo', 'text' => array('espanol' => 'Logo (200x80 píxeles)'), 'sizes' => array(), 'original' => TRUE);
 		$items['keywords'] = array('type' => 'textarea', 'text' => array('espanol' => 'Palabras Claves', 'english' => 'Keywords'), 'placeholder' => 'Ingrese las palabras claves de su empresa');
 		$items['description'] = array('type' => 'textarea', 'text' => array('espanol' => 'Descripción', 'english' => 'Description'), 'placeholder' => 'Ingrese la descripción de su empresa');
 		$items['email_contacto'] = array('type' => 'text', 'text' => array('espanol' => 'Correo Electrónico', 'english' => 'Email'), 'placeholder' => 'Ingrese el correo corporativo de su empresa');
