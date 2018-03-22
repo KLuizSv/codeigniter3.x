@@ -60,7 +60,7 @@
 
       <div class="text-center">
           <br />
-          <p>&copy; <?php echo date("Y"); ?> <strong><?php echo $this->configuracion['titulo']; ?></strong>. Todos los derechos reservados.<br /><small>Desarrollado por <a href="https://www.phsperu.com" target="_blank">PHSPeru.com</a>.</small></p>
+          <p>&copy; <?php echo date("Y"); ?> <a href="https://www.phsperu.com" target="_blank">PHSPeru.com</a> | Todos los derechos reservados.</p>
       </div>
     </div>
     <!-- Placed js at the end of the document so the pages load faster -->

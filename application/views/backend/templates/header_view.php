@@ -173,8 +173,8 @@
 
 <section class="col-md-12">
     <div class="alert alert-info">
-        <strong>Sistema de Administración</strong> desarrollado por: <a href="https://www.phsperu.com" target="_blank">PHSPERU</a>. Todos los derechos reservados.<br />
-        Para cualquier consulta escribir a <a href="mailto:ventas@phsperu.com" target="_blank">ventas@phsperu.com</a>.
+        Página Web desarrollada por: <a href="https://www.phsperu.com" target="_blank">PHSPERU.COM</a> S.A.C. | Todos los derechos reservados.<br />
+        Para cualquier consulta, puede escribirnos a: <a href="mailto:ventas@phsperu.com" target="_blank">ventas@phsperu.com</a>
     </div>
 </section>
 

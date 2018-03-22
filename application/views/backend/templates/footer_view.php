@@ -1,6 +1,6 @@
     </section>
     <section class="col-md-12">
-        <div>&copy; <?php echo date("Y"); ?> <strong><?php echo $this->configuracion['titulo']; ?></strong>. Todos los derechos reservados.<br /><small>Desarrollado por <a href="https://www.phsperu.com" target="_blank">PHSPeru.com</a>.</small></div>
+        <div>&copy; <?php echo date("Y"); ?> <a href="https://www.phsperu.com" target="_blank">PHSPeru.com</a> | Todos los derechos reservados.</div>
     </section>
 </section>
 
