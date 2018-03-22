@@ -1,14 +1,3 @@
-<?php if(isset($valor_retorno) && $valor_retorno == 1): ?>
-<div class="alert alert-info fade in">
-    <button data-dismiss="alert" class="close close-sm" type="button">
-        <i class="fa fa-times"></i>
-    </button>
-    <strong><?php echo $this->lang->line('titulo_ayuda'); ?></strong><br><br>
-    <?php echo $this->lang->line('primera_linea_ayuda'); ?><br>
-    <?php echo $this->lang->line('segunda_linea_ayuda'); ?>
-</div>
-<?php endif; ?>
-
 <?php if(isset($help) && $help <> NULL): ?>
 <div class="alert alert-warning fade in">
     <button data-dismiss="alert" class="close close-sm" type="button">
