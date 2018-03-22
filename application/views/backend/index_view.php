@@ -57,6 +57,11 @@
             <a class="" href="<?php echo base_url(); ?>"><i class="fa fa-long-arrow-left"></i> Regresar a <?php echo $this->configuracion['titulo']; ?></a>
         </div>
       </form>
+
+      <div class="text-center">
+          <br />
+          <p>&copy; <?php echo date("Y"); ?> <strong><?php echo $this->configuracion['titulo']; ?></strong>. Todos los derechos reservados.<br /><small>Desarrollado por <a href="https://www.phsperu.com" target="_blank">PHSPeru.com</a>.</small></p>
+      </div>
     </div>
     <!-- Placed js at the end of the document so the pages load faster -->
     <!--Core js-->

@@ -252,6 +252,34 @@ class MY_Controller extends CI_Controller {
 		}
 	}
 
+	function redireccionar()
+	{
+		$url = $_GET['url']; $ignore = ['#', 'javascript:;', 'javascript:void();']; $url = str_replace("www.", "http://www.", $url);
+
+        if($url != '' AND !in_array($url, $value))
+        {
+            if (filter_var($url, FILTER_VALIDATE_URL) !== false)
+            {
+                if(strpos(base_url(), $url))
+                {
+                    $url = str_replace(base_url(), "", $url); redirect("/" . $url, "refresh");
+                }
+                else
+                {
+                    Header("Location: " . $url);
+                }
+            }
+            else
+            {
+                redirect("/" . $url, "refresh");
+            }
+        }
+        else
+        {
+            redirect("/", "refresh");
+        }
+	}
+
 	function regresar()
 	{
 		$historial = (array) $this->mostrar_session('historial');
@@ -380,7 +408,7 @@ class MY_Controller extends CI_Controller {
 			$value = 'fa-' . trim($value);
 
 			$array[$value] = '<span><i class="fa ' . $value . '"></i> fa ' . $value . '</span>';
-		}		
+		}
 
 		return $array;
 	}
