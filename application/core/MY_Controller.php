@@ -1005,6 +1005,8 @@ class MY_Controller extends CI_Controller {
 					$array[$key] = $archivo;
 				}
 
+				$array[$key] = ((strpos($array[$key], base_url()) !== FALSE) ? (str_replace(base_url(), "", $array[$key])) : $array[$key]);
+
 				if(isset($value['session']) && $value['session'] == TRUE && $array[$key] != NULL)
 				{
 					$this->cargar_session($key, $array[$key]);
