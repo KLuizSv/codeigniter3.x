@@ -46,7 +46,7 @@ CREATE TABLE `administrador` (
 
 INSERT INTO `administrador` (`id`, `nivel`, `userlist`, `correo_electronico`, `contrasenia`, `nombres`, `apellidos`, `imagen`, `acerca_de`, `usuario_creacion`, `usuario_modificacion`, `fecha_creacion`, `fecha_modificacion`, `estado`, `activado`) VALUES
 (1, 0, 1, 'kluizsv@gmail.com', '2d3a53904fbf8678a6bfd8b626a8de0d4da7d6e1', 'Luis', 'Shepherd Vargas', 'default.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor vestibulum imperdiet. Ut auctor accumsan erat, a vulputate metus tristique non. Aliquam aliquam vel orci quis sagittis.', '1', '1', '2014-08-06 22:08:29', '2016-05-11 07:45:51', 1, 1),
-(1415426074, 1, 1, 'admin@phsperu.com', 'e731a7b612ab389fcb7f973c452f33df3eb69c99', 'Administrador', 'General', 'default.jpg', '', '0', '1', '2014-11-07 23:54:34', '2018-03-22 01:45:15', 1, 1);
+(1415426074, 1, 1, 'admin@phsperu.com', '2d3a53904fbf8678a6bfd8b626a8de0d4da7d6e1', 'Administrador', 'General', 'default.jpg', '', '0', '1', '2014-11-07 23:54:34', '2018-03-22 01:45:15', 1, 1);
 
 -- --------------------------------------------------------
 

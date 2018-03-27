@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class usuarios extends MY_Controller {
+class Usuarios extends MY_Controller {
 
 	function __construct() {
 		parent::__construct();
