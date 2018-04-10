@@ -74,7 +74,7 @@
             <div class="adv-table">
             <form class="form_masivo" action="<?php echo backend_url(); ?><?php echo $controller; ?>" method="POST" target="oculto">
                 <input type="hidden" name="token" value="<?php echo MY_Controller::mostrar_session('token'); ?>">
-                <table cellpadding="0" cellspacing="0" border="0" class="dynamic-table table table-bordered table-striped">
+                <table cellpadding="0" cellspacing="0" border="0" data-controller="<?php echo $controller; ?>" class="dynamic-table table table-bordered table-striped">
                 <thead>
                 <tr>
                     <?php $cantidad = 0; ?>

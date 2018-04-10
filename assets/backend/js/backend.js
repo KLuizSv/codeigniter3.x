@@ -412,11 +412,13 @@ function docReady()
     });
 
     $(parent).find('.dynamic-table').dataTable({
-        "bPaginate": false,
         "aaSorting": [[ 1, "desc" ]],
         "aoColumnDefs": [
             { 'bSortable': false, 'aTargets': [ 0, 'no-sort' ] }
-        ]
+        ],
+        "processing": true,
+        "serverSide": true,
+        "ajax": $(this).attr('controller')"../server_side/scripts/server_processing.php"
     });
 
     $('#all').click(function() {

@@ -51,8 +51,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['default_controller'] = "website";
+$route['backend/(:any)/(:any)/(:any)'] = "backend/$1/$2/$3";
+$route['backend/(:any)/(:any)'] = "backend/$1/$2";
 $route['backend/(:any)'] = "backend/$1";
 $route['backend'] = "backend/dashboard";
+$route['(:any)/(:any)/(:any)'] = "website/$1/$2/$3";
+$route['(:any)/(:any)'] = "website/$1/$2";
 $route['(:any)'] = "website/$1";
 
 $route['404_override'] = '';
