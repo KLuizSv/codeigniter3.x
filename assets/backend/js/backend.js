@@ -524,8 +524,10 @@ function agregar_modal(key, url, item_key, item)
         success: function(data) {
             if(data != '' && data != null)
             {
+                parent = $('#modal').find('.modal-body');
+
                 $('#modal').find('.modal-body').html(data);
-                $('#modal').find('#close_modal').attr('onclick', 'actualizar_select("' + key + "', '" + url + "', '" + item_key + "', '" + item + "');");
+                $('#modal').find('#close_modal').attr('onclick', 'actualizar_select("' + url + '", "' + key + '", "' + item_key + '", "' + item + '");');
                 $('#modal').find('.modal-footer').css('display', 'block !important');
                 docReady();
             }
@@ -550,7 +552,11 @@ function actualizar_select(url, id, id_tabla, valor_tabla)
         dataType: 'html',
         data: { id : id_tabla, valor : valor_tabla, token : xnToken },
         success: function(data) {
-            $('#'+id).html(data);
+            parent = $('#content-main'); $(parent).find('#'+id).select2('destroy');
+
+            setTimeout(function(){
+                $(parent).find('#'+id).html(data); $(parent).find('#'+id).select2();
+            }, 100);
         },
         error: function() {
             console.log("Ocurrió un error. Por favor, contacte al desarrollador.");
