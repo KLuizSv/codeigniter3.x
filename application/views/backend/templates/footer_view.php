@@ -26,8 +26,8 @@
 <script src="<?php echo backend_view(); ?>assets/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
 <script src="<?php echo backend_view(); ?>assets/skycons/skycons.js"></script>
 <script src="<?php echo backend_view(); ?>assets/jquery.scrollTo/jquery.scrollTo.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script src="<?php echo (strpos(backend_view(), 'https:')) ? 'https' : 'http'; ?>://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="<?php echo (strpos(backend_view(), 'https:')) ? 'https' : 'http'; ?>://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 <!--clock init-->
 <script src="<?php echo backend_view(); ?>assets/css3clock/js/script.js"></script>
 <!--Easy Pie Chart-->
@@ -48,7 +48,7 @@
 <script type="text/javascript" src="<?php echo backend_view(); ?>assets/jquery-multi-select/js/jquery.quicksearch.js"></script>
 <script type="text/javascript" src="<?php echo backend_view(); ?>assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
 <!-- Google Maps -->
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyAPfSj3aqT8VjHW1_aXfX4igKHkj4S_DKk&sensor=false&libraries=geometry&v=3.7"></script>
+<script src="<?php echo (strpos(backend_view(), 'https:')) ? 'https' : 'http'; ?>://maps.google.com/maps/api/js?key=AIzaSyAPfSj3aqT8VjHW1_aXfX4igKHkj4S_DKk&sensor=false&libraries=geometry&v=3.7"></script>
 <script type="text/javascript" src="<?php echo backend_view(); ?>assets/google-map/maplace.js"></script>
 <!-- Google Maps -->
 <script src="<?php echo backend_view(); ?>assets/jquery-tags-input/jquery.tagsinput.js"></script>
@@ -66,8 +66,8 @@
 <!-- script src="<?php echo backend_view(); ?>js/pubnub.min.js"></script -->
 
 <!-- include summernote css/js -->
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+<link href="<?php echo (strpos(backend_view(), 'https:')) ? 'https' : 'http'; ?>://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+<script src="<?php echo (strpos(backend_view(), 'https:')) ? 'https' : 'http'; ?>://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 <script src="<?php echo backend_view(); ?>js/summernote-es-ES.js"></script>
 <!-- SUMMERNOTE -->
 <script src="<?php echo backend_view(); ?>js/backend.js"></script>
