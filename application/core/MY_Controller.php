@@ -801,12 +801,21 @@ class MY_Controller extends CI_Controller {
 			{
 				if(($value['type'] == 'password' AND count($busqueda) == 0) OR ($value['type'] != 'password'))
 				{
-					if((isset($busqueda[$key]) AND $busqueda[$key] != $this->input->post($key)) OR !isset($busqueda[$key]))
+					if(($value['type'] == 'file' OR $value['type'] == 'photo')) // SI SON FILES..
 					{
-						$config[] = array('field' => $key, 'label' => $value['text'][$this->config->item('language')], 'rules' => $validate);
+						if(@$busqueda[$key] == '' AND $_FILES[$key]['name'] == '')
+						{
+							$config[] = array('field' => $key, 'label' => $value['text'][$this->config->item('language')], 'rules' => $validate);
+						}
+					}
+					else // SI NO LO SON..
+					{
+						if((isset($busqueda[$key]) AND $busqueda[$key] != $this->input->post($key)) OR !isset($busqueda[$key]))
+						{
+							$config[] = array('field' => $key, 'label' => $value['text'][$this->config->item('language')], 'rules' => $validate);
+						}
 					}
 				}
-					
 			}
 		}
 
